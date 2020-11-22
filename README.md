@@ -1,2 +1,2 @@
-# satb
-A Colourful Game of Musical Puzzles
+# SATB
+## A Colourful Game of Musical Puzzles
