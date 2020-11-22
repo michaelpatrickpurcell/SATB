@@ -1,0 +1,155 @@
+\documentclass{scrartcl}
+
+\usepackage{amsmath, amssymb}
+
+\newtheorem{example}{Example}
+
+\title{SATB}
+\subtitle{A Colourful Game of Musical Puzzles}
+\author{Michael Purcell}
+\date{}
+
+\begin{document}
+\maketitle
+\section{Rhythm}
+Time is divided up into a sequence of \emph{beats}.
+\begin{description}
+	\item[R1] Each voice can play a single colour on each beat.
+	\item[R2] At least one voice must play on every beat.
+\end{description}
+
+\section{Melody}
+A \emph{melody} consists of a sequence of \emph{prhases}. Each phrase is a sequence of colours that obeys the \emph{phrasing} rules:
+\begin{description}
+	\item[M1] A repeat must be followed by a step.
+	\item[M2] A skip must be followed by a step in the opposite direction.
+\end{description}
+
+\begin{example}
+There are two two-beat phrases that start with $R$:
+\begin{equation}\nonumber
+	[R \quad W] \qquad [R \quad Y]
+\end{equation}
+and four three-beat phrases that start with $R$:
+\begin{equation}\nonumber
+	[R \quad B \quad W] \qquad [R \quad G \quad Y] \qquad [R \quad R \quad Y] \qquad [R \quad R \quad W]
+\end{equation}
+\end{example}
+
+\section{Harmony}
+\emph{Harmony} is when several different colours are played on the same beat. A \emph{chord} is a set of colours that obey the \emph{consonance} rule:
+\begin{description}
+	\item[H1] No more than two colours in a chord may be adjacent.
+\end{description} 
+\begin{example}
+There are five one-colour chords:
+\begin{equation}\nonumber
+\begin{bmatrix}
+R
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+W
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+B
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+G
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+Y
+\end{bmatrix}
+\end{equation}
+ten two-colour chords:
+\begin{equation}\nonumber
+\begin{bmatrix}
+R \\ W
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+W \\ B
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+B \\ G
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+G \\ Y
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+Y \\ R
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+R \\ B
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+W \\ G
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+B \\ Y
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+R \\ G
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+W \\ Y
+\end{bmatrix}
+\end{equation}
+and five three-colour chords:
+\begin{equation}\nonumber
+\begin{bmatrix}
+R \\ G \\ B
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+W \\ Y \\ G
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+B \\ Y \\ R
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+G \\ R \\ W
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+Y \\ W \\ B
+\end{bmatrix}
+\end{equation}
+\end{example}
+A three-note chord consists of two adjacent colours and a third isolated colour. This isolated colour is called the \emph{root} of the chord.
+\begin{example}
+$R$ is the root of the three-note chord $\left[R \quad G \quad B\right]^{\top}$.
+\end{example}
+
+\section{Counterpoint}
+\emph{Counterpoint} is when several voices play simultaneously. A pair of voices in \emph{similar motion} if they both step or skip in the same direction. A pair of voices moves in \emph{contrary motion} if they step or skip in opposite directions.  A pair of voices move in \emph{oblique motion} if one voice repeats a colour while the other voice changes colours.  A group of melodies played in counterpoint must satisfy the \emph{voice leading} rules:
+\begin{description}
+	\item[C1] At least one voice must move on each beat.
+	\item[C2] At least on pair of voices must move in contrary or oblique motion on each beat.
+\end{description}
+
+\begin{example}
+This composition follows the rules established above:
+\begin{equation}\nonumber
+\begin{bmatrix}
+	B & Y & G & W & B \\
+	G & G & B & G & Y \\
+	R & W & B & W & R
+\end{bmatrix}
+\end{equation}
+\end{example}
+
+\end{document}
