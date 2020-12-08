@@ -1,0 +1,16 @@
+\documentclass{standalone}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \draw[ultra thick, fill=gray!40] (0,0) -- (0,8) -- (15.75,8) -- (15.75,0) -- cycle;
+
+  \foreach \i in {1,2.25, ..., 14.75}
+    \foreach \j in {1, 2.5, ..., 7}
+	  \node[draw, thick, minimum size=1cm] (n\i\j) at (\i,\j) {};  
+\end{tikzpicture}
+
+\end{document}
