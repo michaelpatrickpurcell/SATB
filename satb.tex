@@ -19,7 +19,7 @@ Time is divided up into a sequence of \emph{beats}.
 \end{description}
 
 \section{Melody}
-A \emph{melody} consists of a sequence of \emph{prhases}. Each phrase is a sequence of colours that obeys the \emph{phrasing} rules:
+A \emph{melody} consists of a sequence of \emph{prhases}. Each phrase is a sequence of colours played by a single voice that obeys the \emph{phrasing} rules:
 \begin{description}
 	\item[M1] A repeat must be followed by a step.
 	\item[M2] A skip must be followed by a step in the opposite direction.
@@ -37,7 +37,7 @@ and four three-beat phrases that start with $R$:
 \end{example}
 
 \section{Harmony}
-\emph{Harmony} is when several different colours are played on the same beat. A \emph{chord} is a set of colours that obey the \emph{consonance} rule:
+\emph{Harmony} is when several different colours are played on the same beat. A \emph{chord} is a set of colours played on the same beat by different voices that obeys the \emph{consonance} rule:
 \begin{description}
 	\item[H1] No more than two colours in a chord may be adjacent.
 \end{description}
@@ -131,7 +131,12 @@ Y \\ W \\ B
 \end{example}
 A three-note chord consists of two adjacent colours and a third isolated colour. This isolated colour is called the \emph{root} of the chord.
 \begin{example}
-$R$ is the root of the three-note chord $\left[R \quad G \quad B\right]^{\top}$.
+$R$ is the root of the three-note chord %\left[R \quad G \quad B\right]^{\top}
+\begin{equation}\nonumber
+\begin{bmatrix}
+R \\ G \\ B
+\end{bmatrix}
+\end{equation}
 \end{example}
 
 \section{Counterpoint}
