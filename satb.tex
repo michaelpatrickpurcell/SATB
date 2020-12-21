@@ -11,20 +11,49 @@
 
 \begin{document}
 \maketitle
-\section{Rhythm}
-Time is divided up into a sequence of \emph{beats}.
+\section{Introduction}\label{section:introduction}
+SATB is a game for 1-5 players who work together to create a \emph{composition}.
+A composition is a two-dimensional array of \emph{colours}.   
+Each row of a composition is called a \emph{voice} while
+each column is called a \emph{beat}.
+Players create compositions by choosing which colour each voice will play on
+each beat. 
+
+\section{Colours and Rests}
+There are five colours in an SATB composition:
+red ($R$), yellow ($Y$), green ($G$), blue ($B$), and white ($W$).
+We impose a structure on these five colours. This structure is depicted on the game
+board by solid and dashed lines. 
+If two colours are connected by a solid line then we say that they are \emph{adjacent}.
+If two colours connected by a dashed line then they are not adjacent.
+Given a composition $\mathbf{C} = [C_{ij}]$, we say that $i$th voice
+\emph{plays a colour} on the $j$th beat if $C_{ij} \in \{R, Y, G, B, W\}$.
+
+There is a sixth space on the game board ($X$) which represents a rest.
+Given a composition $\mathbf{C} = [C_{ij}]$,
+we say that the $i$th voice \emph{rests} on the $j$th beat if $C_{ij} = X$.
+
+\section{Composition Rules}
+Each composition must satisfy a set of rules which ensure that all of the voices are
+both individually interesting and mutually consistent with one another.
+ 
+\subsection{Rhythm}
+As described in Section \ref{section:introduction}, each composition is divided up into a sequence of beats. On each beat, each voice must either play a colour or rest.
+Furthermore, the voices must collectively obey the \emph{continuity} rules:
 \begin{description}
-	\item[R1] Each voice can play a single colour on each beat.
-	\item[R2] At least one voice must play on every beat.
+	\item[R1] No more than one voice may rest on each beat.
+	\item[R2] No voice may rest on more than one consecutive beat.
 \end{description}
 
-\section{Melody}
-A \emph{melody} consists of a sequence of \emph{prhases}. Each phrase is a sequence of colours played by a single voice that obeys the \emph{phrasing} rules:
+\subsection{Melody}
+A \emph{melody} is a sequence of colours and rests played by a single voice.  A \emph{repeat} is a when a voice plays the same colour on two consecutive beats. A \emph{step} is when a voice plays two adjacent colours on two consecutive beats. A \emph{skip} is when a voice plays two non-adjacent colours on two consecutive beats.  The direction of a step or skip
+is the direction (clockwise or anticlockwise) that a token would travel on the game board
+when it moves via the shortest path between the two spaces depicting the two colours involved. A melody must obey the \emph{phrasing} rules: 
 \begin{description}
 	\item[M1] A repeat must be followed by a step.
 	\item[M2] A skip must be followed by a step in the opposite direction.
 \end{description}
-
+A \emph{phrase} is a sequence of colours that obey the phrasing rules. Notice that a phrase may not be interrupted by a rest.
 \begin{example}
 There are two two-beat phrases that start with $R$:
 \begin{equation}\nonumber
@@ -36,11 +65,12 @@ and four three-beat phrases that start with $R$:
 \end{equation}
 \end{example}
 
-\section{Harmony}
-\emph{Harmony} is when several different colours are played on the same beat. A \emph{chord} is a set of colours played on the same beat by different voices that obeys the \emph{consonance} rule:
+\subsection{Harmony}
+\emph{Harmony} is when several different colours are played on the same beat by different voices. A \emph{chord} is a set of colours that obey the \emph{consonance} rule:
 \begin{description}
 	\item[H1] No more than two colours in a chord may be adjacent.
 \end{description}
+A three-note chord consists of two adjacent colours and a third isolated colour. This isolated colour is called the \emph{root} of the chord.
 \begin{example}
 There are five one-colour chords:
 \begin{equation}\nonumber
@@ -129,12 +159,8 @@ Y \\ W \\ B
 \end{bmatrix}
 \end{equation}
 \end{example}
-A three-note chord consists of two adjacent colours and a third isolated colour. This isolated colour is called the \emph{root} of the chord.
-\begin{example}
-$R$ is the root of the three-note chord $\begin{bmatrix} R \\ G \\ B \end{bmatrix}$
-\end{example}
 
-\section{Counterpoint}
+\subsection{Counterpoint}
 \emph{Counterpoint} is when several voices play simultaneously. A pair of voices move in \emph{similar motion} if they both step or skip in the same direction. A pair of voices move in \emph{contrary motion} if they step or skip in opposite directions.  A pair of voices move in \emph{oblique motion} if one voice repeats a colour while the other voice changes colours.  A group of melodies played in counterpoint must satisfy the \emph{voice leading} rules:
 \begin{description}
 	\item[C1] At least one voice must move on each beat.
