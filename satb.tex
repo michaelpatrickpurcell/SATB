@@ -87,18 +87,13 @@ each beat.
 \section{Colours and Rests}
 There are five colours in an SATB composition:
 $\RRR$, $\WWW$, $\BBB$, $\GGG$, and $\YYY$.
+Each colour is represented by a corresponding space on the game board.
+The sixth space on the game board, $\XXX$, represents a rest.
 We impose a structure on these five colours. This structure is depicted on the game
 board by solid and dashed lines. 
 If two colours are connected by a solid line then we say that they are \emph{adjacent}.
 If two colours connected by a dashed line then they are not adjacent.
-Given a composition $\mathbf{C} = [C_{ij}]$, we say that $i$th voice
-\emph{plays a colour} on the $j$th beat if
-$C_{ij} \in \begin{Bmatrix}\RRR, \WWW, \BBB, \GGG, \YYY\end{Bmatrix}$.
-
-There is a sixth space on the game board, $\XXX$, which represents a rest.
-Given a composition $\mathbf{C} = [C_{ij}]$,
-we say that the $i$th voice \emph{rests} on the $j$th beat if $C_{ij} = \XXX$.
-
+On each beat, each voice will either \emph{play a colour} or \emph{rest}.
 
 \section{Composition Rules}\label{section:composition_rules}
 Each composition must satisfy a set of rules which ensure that all of the voices are
@@ -239,16 +234,30 @@ A group of melodies played in counterpoint must satisfy the \emph{voice leading}
 	\item[C3] No pair of voices may move in parallel motion.
 \end{description}
 
+%\begin{example}\label{example:valid_composition}
+%This composition follows the rules established above:
+%\begin{equation}\nonumber
+%\begin{bmatrix}
+%	\BBB & \YYY & \GGG & \WWW & \BBB \\
+%	\GGG & \GGG & \BBB & \GGG & \YYY \\
+%	\RRR & \WWW & \BBB & \WWW & \RRR
+%\end{bmatrix}
+%\end{equation}
+%\end{example}
+
 \begin{example}\label{example:valid_composition}
 This composition follows the rules established above:
 \begin{equation}\nonumber
 \begin{bmatrix}
-	\BBB & \YYY & \GGG & \WWW & \BBB \\
-	\GGG & \GGG & \BBB & \GGG & \YYY \\
-	\RRR & \WWW & \BBB & \WWW & \RRR
+	\BBB & \GGG & \RRR & \YYY & \GGG & \BBB & \RRR & \WWW & \XXX \\
+	\YYY & \GGG & \XXX & \RRR & \WWW & \BBB & \GGG & \XXX & \WWW \\
+	\RRR & \WWW & \BBB & \BBB & \GGG & \GGG & \BBB & \BBB & \GGG \\
+	\XXX & \WWW & \RRR & \XXX & \RRR & \XXX & \GGG & \YYY & \GGG \\
+	\RRR & \YYY & \GGG & \BBB & \WWW & \RRR & \BBB & \WWW & \RRR
 \end{bmatrix}
 \end{equation}
 \end{example}
+
 
 \section{Game Play}
 The composition rules provide criteria that can be used to evaluate a composition but do not
@@ -278,31 +287,50 @@ is thereby established.
 
 \textcolor{red}{TODO: Describe how figured bass notation will work in SATB.}
 
+%\begin{example} 
+%The composition from Example \ref{example:valid_composition} is consistent with either of the the following figured bass structures:
+%\begin{equation}\nonumber
+%\begin{bmatrix}
+%\begin{Bmatrix} \BBB \\ \GGG \end{Bmatrix} &
+%\begin{Bmatrix} \GGG \\ \YYY \end{Bmatrix} &
+%\begin{Bmatrix} \RRR \\ \GGG \end{Bmatrix} &
+%\begin{Bmatrix} \YYY \\ \GGG \end{Bmatrix} &
+%\begin{Bmatrix} \BBB \\ \YYY \end{Bmatrix} \\ \addlinespace
+%\RRR & \WWW & \BBB & \WWW & \RRR
+%\end{bmatrix}
+%\begin{bmatrix}
+%\begin{Bmatrix} \BBB \\ \GGG \end{Bmatrix} &
+%\begin{Bmatrix} \GGG \\ \YYY \end{Bmatrix} &
+%\begin{Bmatrix} \RRR \\ \GGG \end{Bmatrix} &
+%\begin{Bmatrix} \RRR \\ \GGG \end{Bmatrix} &
+%\begin{Bmatrix} \BBB \\ \YYY \end{Bmatrix} \\ \addlinespace
+%\RRR & \WWW & \BBB & \WWW & \RRR
+%\end{bmatrix}
+%\end{equation}
+%The ambiguity is due to the fact that the bass note in the third and fourth beats is replicated
+%in one of the other two voices.  On beat three, the two colours that are being played are
+%adjacent. Therefore, the composition is consistent with only one possible chord on beat
+%three.  On beat four, however, the two colours that are being played are not adjacent.
+%Therefore, the composition is consistent with either of two possible chords on beat four.
+%\end{example}
+
 \begin{example} 
-The composition from Example \ref{example:valid_composition} is consistent with either of the the following figured bass structures:
+The composition from Example \ref{example:valid_composition} is consistent with
+the following figured bass structure:
 \begin{equation}\nonumber
 \begin{bmatrix}
+\begin{Bmatrix} \BBB \\ \YYY \end{Bmatrix} &
+\begin{Bmatrix} \WWW \\ \GGG \end{Bmatrix} &
+\begin{Bmatrix} \RRR \\ \BBB \end{Bmatrix} &
+\begin{Bmatrix} \YYY \\ \RRR \end{Bmatrix} &
+\begin{Bmatrix} \GGG \\ \RRR \end{Bmatrix} &
 \begin{Bmatrix} \BBB \\ \GGG \end{Bmatrix} &
-\begin{Bmatrix} \GGG \\ \YYY \end{Bmatrix} &
-\begin{Bmatrix} \RRR \\ \GGG \end{Bmatrix} &
-\begin{Bmatrix} \YYY \\ \GGG \end{Bmatrix} &
-\begin{Bmatrix} \BBB \\ \YYY \end{Bmatrix} \\ \addlinespace
-\RRR & \WWW & \BBB & \WWW & \RRR
-\end{bmatrix}
-\begin{bmatrix}
-\begin{Bmatrix} \BBB \\ \GGG \end{Bmatrix} &
-\begin{Bmatrix} \GGG \\ \YYY \end{Bmatrix} &
-\begin{Bmatrix} \RRR \\ \GGG \end{Bmatrix} &
-\begin{Bmatrix} \RRR \\ \GGG \end{Bmatrix} &
-\begin{Bmatrix} \BBB \\ \YYY \end{Bmatrix} \\ \addlinespace
-\RRR & \WWW & \BBB & \WWW & \RRR
+\begin{Bmatrix} \GGG \\ \RRR \end{Bmatrix} &
+\begin{Bmatrix} \BBB \\ \YYY \end{Bmatrix} &
+\begin{Bmatrix} \WWW \\ \GGG \end{Bmatrix} \\ \addlinespace
+\RRR & \YYY & \GGG & \BBB & \WWW & \RRR & \BBB & \WWW & \RRR
 \end{bmatrix}
 \end{equation}
-The ambiguity is due to the fact that the bass note in the third and fourth beats is replicated
-in one of the other two voices.  On beat three, the two colours that are being played are
-adjacent. Therefore, the composition is consistent with only one possible chord on beat
-three.  On beat four, however, the two colours that are being played are not adjacent.
-Therefore, the composition is consistent with either of two possible chords on beat four.
 \end{example}
 
 \begin{table}[ht]
