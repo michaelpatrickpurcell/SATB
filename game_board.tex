@@ -6,7 +6,7 @@
 \begin{document}
 
 \begin{tikzpicture}
-  \draw[ultra thick, fill=gray!40] (-8,-7.5) -- (-8,8.5) -- (8,8.5) -- (8,-7.5) -- cycle;
+  \draw[ultra thick, fill=gray!40] (-8,-7.5) -- (-8,9.5) -- (8,9.5) -- (8,-7.5) -- cycle;
 
   \node[draw, circle, minimum size=3cm, fill=Red, ultra thick] (r) at (90:6) {\Huge{$R$}};
   \node[draw, circle, minimum size=3cm, fill=Yellow, ultra thick] (y) at (162:6) {\Huge{$Y$}};
@@ -25,6 +25,8 @@
   \draw[ultra thick, dashed] (w) -- (y);
   \draw[ultra thick, dashed] (y) -- (b);
   \draw[ultra thick, dashed] (b) -- (r);
+  
+  \node (title) at (0, 8.5) {\Huge{SATB: Game Board}};
 \end{tikzpicture}
 
 \end{document}
