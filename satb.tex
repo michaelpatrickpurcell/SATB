@@ -230,7 +230,7 @@ A pair of voices move in \emph{parallel motion} if they play the same colours fo
 A group of melodies played in counterpoint must satisfy the \emph{voice leading} rules:
 \begin{description}
 	\item[C1] At least one voice must move on each beat.
-	\item[C2] At least one pair of voices must move in contrary or oblique motion on each beat.
+	\item[C2] At least one pair of voices must move in contrary motion on each beat.
 	\item[C3] No pair of voices may move in parallel motion.
 \end{description}
 
@@ -333,7 +333,7 @@ the following figured bass structure:
 \end{equation}
 \end{example}
 
-\begin{table}[ht]
+\begin{table}[p]
 \caption{Generate a random figured bass structure for a composition.}
 \centering
 \begin{subtable}[t]{0.9\textwidth}
@@ -372,5 +372,31 @@ $\{5,6\}$ & $\begin{Bmatrix} \BBB \\ \YYY\end{Bmatrix}$ & $\begin{Bmatrix} \GGG 
 \end{subtable}
 \end{table}
 
-
+\newpage
+\section{Checklist}
+On each beat, the players select an action card for each voice.
+\begin{enumerate}
+  \item Check continuity rules:
+  \begin{itemize}
+    \item At most one voice may select the ``Rest'' action.
+    \item A voice that rested on the previous beat must play a colour.
+  \end{itemize}
+  \item Check phrasing rules:
+  \begin{itemize}
+    \item Any voice that selected a ``Skip Clockwise'' action on the previous beat must select the ``Step Anticlockwise'' action.
+    \item Any voice that selected a "Skip Anticlockwise" action on the previous beat must select the ``Step Clockwise'' action.
+    \item Any voice that selected the "Repeat" action on the previous beat must select either
+    the ``Step Clockwise'' or ``Step Anticlockwise'' action.
+  \end{itemize}
+  \item Check the consonance rule:
+  \begin{itemize}
+    \item No more than two colours that will be played may be adjacent.
+  \end{itemize}
+  \item Check voice leading rules:
+  \begin{itemize}
+    \item At least one voice must select a ``Clockwise'' action.
+    \item At least one voice must select an ``Anticlockwise'' action.
+    \item All voices on the same colour must select different actions.
+  \end{itemize}
+\end{enumerate}
 \end{document}
