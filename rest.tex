@@ -1,0 +1,37 @@
+\documentclass{standalone}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{patterns}
+
+\begin{document}
+\begin{tikzpicture}
+  \draw[fill=Black] (90:6) -- (162:6) -- (234:6) -- (306:6) -- (18:6) -- cycle;
+  \draw[fill=Gray] (90:5.25) -- (162:5.25) node[midway, below, sloped, rotate=180] {\textcolor{White}{Rest}}
+                                            -- (234:5.25) node[midway, below, sloped] {\textcolor{White}{Rest}}
+                                            -- (306:5.25) node[midway, below, sloped] {\textcolor{White}{Rest}}
+                                            -- (18:5.25) node[midway, below, sloped] {\textcolor{White}{Rest}}
+                                            -- cycle node[midway, below, sloped, rotate=180] {\textcolor{White}{Rest}};
+
+
+  \node[draw, circle, fill=Gray] (r) at (90:4.5) {};
+  \node[draw, circle, fill=Gray] (y) at (162:4.5) {};
+  \node[draw, circle, fill=Gray] (g) at (234:4.5) {};
+  \node[draw, circle, fill=Gray] (b) at (306:4.5) {};
+  \node[draw, circle, fill=Gray] (w) at (18:4.5) {};
+  \node[draw, circle, fill=Black] (x) at (0,0) {};
+
+  \draw (r) -- (w);
+  \draw (w) -- (b);
+  \draw (b) -- (g);
+  \draw (g) -- (y);
+  \draw (r) -- (y);
+  \draw[dashed] (r) -- (b);
+  \draw[dashed] (b) -- (y);
+  \draw[dashed] (y) -- (w);
+  \draw[dashed] (w) -- (g);
+  \draw[dashed] (g) -- (r);
+\end{tikzpicture}
+
+\end{document}

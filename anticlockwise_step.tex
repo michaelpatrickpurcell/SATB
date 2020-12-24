@@ -1,0 +1,35 @@
+\documentclass{standalone}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{document}
+\begin{tikzpicture}
+  \draw[fill=Orange] (90:6) -- (162:6) -- (234:6) -- (306:6) -- (18:6) -- cycle;
+  \draw[fill=Gray] (90:5.25) -- (162:5.25) node[midway, below, sloped, rotate=180] {Anticlockwise Step}
+                                            -- (234:5.25) node[midway, below, sloped] {Anticlockwise Step}
+                                            -- (306:5.25) node[midway, below, sloped] {Anticlockwise Step}
+                                            -- (18:5.25) node[midway, below, sloped] {Anticlockwise Step}
+                                            -- cycle node[midway, below, sloped, rotate=180] {Anticlockwise Step};
+
+  \node[draw, circle, fill=Black] (r) at (90:4.5) {};
+  \node[draw, circle, fill=Black] (y) at (162:4.5) {};
+  \node[draw, circle] (g) at (234:4.5) {};
+  \node[draw, circle] (b) at (306:4.5) {};
+  \node[draw, circle] (w) at (18:4.5) {};
+  \node[draw, circle] (x) at (0,0) {};
+
+  \draw (r) -- (w);
+  \draw (w) -- (b);
+  \draw (b) -- (g);
+  \draw (g) -- (y);
+  \draw[ultra thick, -{Straight Barb}] (r) -- (y);
+  \draw[dashed] (r) -- (b);
+  \draw[dashed] (b) -- (y);
+  \draw[dashed] (y) -- (w);
+  \draw[dashed] (w) -- (g);
+  \draw[dashed] (g) -- (r);
+\end{tikzpicture}
+
+\end{document}
